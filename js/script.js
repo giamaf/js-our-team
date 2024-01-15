@@ -34,7 +34,6 @@
 //todo ----------------------------------------------------------------------------------
 
 //todo MILESTONE 0
-
 const teamPeople = [
     {
         name: 'Wayne Barnett',
@@ -75,6 +74,75 @@ for (let i = 0; i < teamPeople.length; i++) {
     console.log('nome: ', currentPerson.name);
     console.log('ruolo:', currentPerson.role);
     console.log('foto: ', currentPerson.photo);
+}
 
+//todo MILESTONE 2
+//todo BONUS 1
+//todo BONUS 2
+
+// Recupero gli elementi dalla pagina
+const titleSection = document.querySelector('.title');
+const cardsSection = document.querySelector('.team-members-card');
+const row = document.querySelector('.row');
+
+//! Creo gli elementi da inserire nel DOM
+
+// Titolo e sottotitolo
+let title = '';
+let subTitle = '';
+
+// Creo il contenuto degli elementi title e subtitle
+const titleMessage = 'OUR TEAM';
+const subTitleMessage = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor debitis quos magnam mollitia necessitatibus. Rerum laudantium odit vel repudiandae corrupti?'
+
+title += `<h5 class="py-2">${titleMessage}</h5>
+<p class="h6."><small>${subTitleMessage}</small></p>`;
+
+// Inserisco gli elementi all'interno della sezione 'Title'
+titleSection.innerHTML = title;
+
+// Cards
+let col = '';
+let card = '';
+let cardbody = '';
+let teamMember = '';
+let role = '';
+let photo = '';
+
+// Creo il contenuto delle cards
+for (let i = 0; i < teamPeople.length; i++) {
+    const currentPerson = teamPeople[i];
+
+    // Creo i contenuti delle cards
+    photo = `<img src="/img/${currentPerson['photo']}" class="card-img-top">`;
+    role = `<p class="card-text">${currentPerson['role']}</p>`;
+    teamMember = `<p class="card-text">${currentPerson['name']}</p>`;
+
+    // Condizione per la quale devo buildare card e card-body
+    if (i === 0) {
+        cardbody += `<div class="card-body">${teamMember}${role}</div>`;
+        card += `<div class="card">${photo}${cardbody}</div>`;
+    }
+
+    // Creo le cards
+    col += `<div class="col-4">${card}</div>`;
 
 }
+
+// Recupero il card-body in pagina e ci monto il nome e il ruolo
+const cardBodyItem = document.querySelectorAll('.card-body');
+cardBodyItem.innerHTML = teamMember + role;
+console.log(photo, role, teamMember);
+
+// Recupero la card in pagina e ci monto un card-body
+const cardItems = document.querySelectorAll('.card');
+cardItems.innerHTML = cardbody;
+
+// Recupero gli elementi cols in pagina e ci monto una card
+const colsItems = document.querySelectorAll('.col-4');
+colsItems.innerHTML = card;
+
+// Inserisco le cols nella row e stampo in pagina
+row.innerHTML = col;
+
+
