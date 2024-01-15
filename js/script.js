@@ -70,10 +70,10 @@ const teamPeople = [
 //todo MILESTONE 1
 for (let i = 0; i < teamPeople.length; i++) {
     const currentPerson = teamPeople[i];
-    console.log(currentPerson);
-    console.log('nome: ', currentPerson.name);
-    console.log('ruolo:', currentPerson.role);
-    console.log('foto: ', currentPerson.photo);
+    // console.log(currentPerson);
+    // console.log('nome: ', currentPerson.name);
+    // console.log('ruolo:', currentPerson.role);
+    // console.log('foto: ', currentPerson.photo);
 }
 
 //todo MILESTONE 2
@@ -96,7 +96,7 @@ const titleMessage = 'OUR TEAM';
 const subTitleMessage = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor debitis quos magnam mollitia necessitatibus. Rerum laudantium odit vel repudiandae corrupti?'
 
 title += `<h5 class="py-2">${titleMessage}</h5>
-<p class="h6."><small>${subTitleMessage}</small></p>`;
+<p class="h6."><small><small>${subTitleMessage}</small></small></p>`;
 
 // Inserisco gli elementi all'interno della sezione 'Title'
 titleSection.innerHTML = title;
@@ -115,14 +115,10 @@ for (let i = 0; i < teamPeople.length; i++) {
 
     // Creo i contenuti delle cards
     photo = `<img src="/img/${currentPerson['photo']}" class="card-img-top">`;
-    role = `<p class="card-text">${currentPerson['role']}</p>`;
-    teamMember = `<p class="card-text">${currentPerson['name']}</p>`;
-
-    // Condizione per la quale devo buildare card e card-body
-    if (i === 0) {
-        cardbody += `<div class="card-body">${teamMember}${role}</div>`;
-        card += `<div class="card">${photo}${cardbody}</div>`;
-    }
+    role = `<p class="card-text"><small><small>${currentPerson['role']}</small></small></p>`;
+    teamMember = `<p class="card-text m-0">${currentPerson['name']}</p>`;
+    cardbody = `<div class="card-body">${teamMember}${role}</div>`;
+    card = `<div class="card">${photo}${cardbody}</div>`;
 
     // Creo le cards
     col += `<div class="col-4">${card}</div>`;
