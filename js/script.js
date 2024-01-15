@@ -129,20 +129,8 @@ for (let i = 0; i < teamPeople.length; i++) {
 
 }
 
-// Recupero il card-body in pagina e ci monto il nome e il ruolo
-const cardBodyItem = document.querySelectorAll('.card-body');
-cardBodyItem.innerHTML = teamMember + role;
-console.log(photo, role, teamMember);
-
-// Recupero la card in pagina e ci monto un card-body
-const cardItems = document.querySelectorAll('.card');
-cardItems.innerHTML = cardbody;
-
-// Recupero gli elementi cols in pagina e ci monto una card
-const colsItems = document.querySelectorAll('.col-4');
-colsItems.innerHTML = card;
-
 // Inserisco le cols nella row e stampo in pagina
 row.innerHTML = col;
+
 
 
