@@ -1,9 +1,9 @@
 /* CSS Reset */
-* {
+/* * {
     Margin: 0;
     Padding: 0;
     Box-sizing: border-box;
-}
+} */
 
 .my-container {
     margin: 0 auto;
@@ -12,5 +12,5 @@
 
 section {
     text-align: center;
-    margin: 40px 0px;
+    margin: 20px 0px;
 }
